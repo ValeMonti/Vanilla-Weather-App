@@ -16,7 +16,90 @@
   </head>
   <body>
     <div class="container">
-      <h1>hiiii</h1>
+      <form id="search-bar">
+        <input
+          type="search"
+          placeholder="Enter city"
+          id="search-input"
+          class="search-bar"
+          autocomplete="off"
+        />
+        <input
+          type="submit"
+          value="Search"
+          id="search-button"
+          class="search-bar"
+        />
+
+        <input
+          type="submit"
+          title="Find your Location"
+          value="📍"
+          id="local-button"
+          class="search-bar"
+        />
+      </form>
+      <div id="app-box">
+        <div class="row">
+          <div id="current-city" class="col-6">Sydney</div>
+          <div class="col-6">
+            <div id="current-date">Friday, 10 September 2021</div>
+            <div id="current-time">15:30</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-3">☀</div>
+          <div class="col-3">28° <span>C</span> | <span>F</span></div>
+          <div class="col-3">
+            <ul>
+              <li>Clear</li>
+              <li>Humidity: 30%</li>
+              <li>Wind: 19km/h</li>
+            </ul>
+          </div>
+        </div>
+
+        <footer class="next-days">
+          <div class="card" style="width: 11rem">
+            <div class="card-body">
+              <h4 class="card-title">Sat</h4>
+              <p class="card-text">☀</p>
+              <h4 class="card-title">20&deg;</h4>
+            </div>
+          </div>
+          <div class="card" style="width: 11rem">
+            <div class="card-body">
+              <h4 class="card-title">Sun</h4>
+              <p class="card-text">🌦</p>
+              <h4 class="card-title">21&deg;</h4>
+            </div>
+          </div>
+
+          <div class="card" style="width: 11rem">
+            <div class="card-body">
+              <h4 class="card-title">Mon</h4>
+              <p class="card-text">🌤</p>
+              <h4 class="card-title">21&deg;</h4>
+            </div>
+          </div>
+
+          <div class="card" style="width: 11rem">
+            <div class="card-body">
+              <h4 class="card-title">Tue</h4>
+              <p class="card-text">🌤</p>
+              <h4 class="card-title">22&deg;</h4>
+            </div>
+          </div>
+          <div class="card" style="width: 11rem">
+            <div class="card-body">
+              <h4 class="card-title">Wed</h4>
+              <p class="card-text">☀</p>
+              <h4 class="card-title">24&deg;</h4>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
