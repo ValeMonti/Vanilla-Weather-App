@@ -1,8 +1,27 @@
 .container {
   max-width: 900px;
   max-height: 800px;
-
   margin: 0 auto;
+}
+.search-bar {
+  font-size: 15px;
+  border-radius: 15px 0px 0px 15px;
+  background-color: white;
+  padding: 5px 40px 5px 20px;
+  outline: none;
+  border: none;
+  opacity: 80%;
+}
+
+#local-button {
+  border: none;
+  padding: 5px;
+  border-radius: 0px;
+  margin: 0px 0px 0px -131px;
+}
+#search-button {
+  background-color: rgb(168, 208, 221);
+  border-radius: 0px 15px 15px 0px;
 }
 .app-body {
   border: none;
@@ -10,6 +29,7 @@
   background: center/cover url("../media/day.jpg") no-repeat;
   padding: 5px 20px;
   color: white;
+  text-shadow: 2px 2px 2px black;
 }
 .now-city-time {
   margin: 0px 0px 45px;
@@ -58,6 +78,7 @@ footer .card {
 }
 .card-title {
   font-size: 18px;
+  text-shadow: 2px 2px 2px black;
 }
 .source-link {
   text-align: center;
