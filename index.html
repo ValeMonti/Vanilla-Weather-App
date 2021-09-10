@@ -11,6 +11,8 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
@@ -50,15 +52,15 @@
 
         <div class="row now-weather">
           <div class="col-2 now-icon">☀</div>
-          <div class="col-4 now-temp">
+          <div class="col-4 now-temp" id="current-temp">
             28° <span class="unit">C</span> <span class="unit">|</span>
             <span class="unit">F</span>
           </div>
           <div class="col-4 now-info">
             <ul>
-              <li>Clear</li>
-              <li>Humidity: 30%</li>
-              <li>Wind: 19km/h</li>
+              <li id="description">Clear</li>
+              <li id="humidity">Humidity: 30%</li>
+              <li id="wind">Wind: 19km/h</li>
             </ul>
           </div>
         </div>
