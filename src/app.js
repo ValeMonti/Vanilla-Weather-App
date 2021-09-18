@@ -12,6 +12,6 @@ function displayTemperature(response) {
 }
 
 let apiKey = "d9d50f2f019894bca4e62266dfe12e78";
-let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=Sydney&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Sydney&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
