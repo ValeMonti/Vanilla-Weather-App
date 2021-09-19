@@ -37,6 +37,7 @@ function formatTime(timestamp) {
   if (hour < 10) {
     hour = `0${hour}`;
   }
+
   let minute = date.getMinutes();
   if (minute < 10) {
     minute = `0${minute}`;

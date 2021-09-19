@@ -27,11 +27,14 @@
 .app-body {
   border: none;
   border-radius: 15px 15px;
-  background: center/cover url("../media/day.jpg") no-repeat;
   padding: 5px 20px;
   color: white;
   text-shadow: 2px 2px 2px black;
 }
+.day {
+  background: center/cover url("../media/day.jpg") no-repeat;
+}
+/* .night {background: center/cover url("../media/night.jpg") no-repeat;} */
 .now-city-time {
   margin: 0px 0px 45px;
 }
