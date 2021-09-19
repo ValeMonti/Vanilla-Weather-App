@@ -58,15 +58,21 @@
 .unit {
   font-size: 12px;
   font-weight: lighter;
-  margin-left: -11px;
+  margin-left: -58px;
+  padding-top: 62px;
+  padding-left: 0px;
 }
 ul {
   list-style: none;
   font-size: 20px;
   margin-top: 10px;
+}
+li:first-letter {
   text-transform: capitalize;
 }
-
+.now-info {
+  margin-left: -245px;
+}
 footer {
   display: flex;
   text-align: center;
