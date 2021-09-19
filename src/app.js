@@ -67,7 +67,18 @@ function displayTemperature(response) {
   icon.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "d9d50f2f019894bca4e62266dfe12e78";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Sydney&appid=${apiKey}&units=metric`;
+function searchCity(city) {
+  let apiKey = "d9d50f2f019894bca4e62266dfe12e78";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function search(event) {
+  event.preventDefault();
+  let city = document.querySelector("#search-input").value;
+  searchCity(city);
+}
+searchCity("Sydney");
+
+let searchBar = document.querySelector("#search-bar");
+searchBar.addEventListener("submit", search);
