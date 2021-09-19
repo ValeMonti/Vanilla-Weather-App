@@ -15,9 +15,10 @@
 
 #local-button {
   border: none;
-  padding: 5px;
+  padding: 5px 0px;
   border-radius: 0px;
-  margin: 0px 0px 0px -131px;
+  margin: 0px 0px 0px -135px;
+  background: none;
 }
 #search-button {
   background-color: rgb(168, 208, 221);
@@ -44,13 +45,14 @@
   margin-top: 55px;
 }
 
-.now-icon,
+#now-icon {
+  margin-left: 40px;
+  margin-top: -15px;
+}
 .now-temp {
   font-size: 70px;
   padding-bottom: 60px;
   padding-left: 90px;
-}
-.now-temp {
   font-weight: bold;
   margin-right: -45px;
   margin-left: 25px;
@@ -64,6 +66,7 @@
   text-shadow: none;
   font-weight: bold;
 }
+
 .active {
   cursor: default;
   color: white;
