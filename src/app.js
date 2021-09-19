@@ -31,8 +31,8 @@ function formatDate(timestamp) {
 
   return `${day}, ${date} ${month} ${year}`;
 }
-function formatTime(timestamp) {
-  let date = new Date(timestamp);
+function formatTime() {
+  let date = new Date();
   let hour = date.getHours();
   if (hour < 10) {
     hour = `0${hour}`;
