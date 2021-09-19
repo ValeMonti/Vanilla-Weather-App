@@ -61,6 +61,17 @@
   margin-left: -58px;
   padding-top: 62px;
   padding-left: 0px;
+  text-shadow: none;
+  font-weight: bold;
+}
+.active {
+  cursor: default;
+  color: white;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+  color: white;
 }
 ul {
   list-style: none;

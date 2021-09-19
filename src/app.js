@@ -54,9 +54,9 @@ function displayTemperature(response) {
   let time = document.querySelector("#current-time");
   let icon = document.querySelector("#now-icon");
 
-  celsius = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
 
-  temperature.innerHTML = `${Math.round(celsius)}°`;
+  temperature.innerHTML = `${Math.round(celsiusTemperature)}°`;
   city.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = `humidity: ${response.data.main.humidity} %`;
@@ -84,16 +84,27 @@ function search(event) {
 function showFahreneit(event) {
   event.preventDefault();
   let temperature = document.querySelector("#current-temp");
-  let fahreneit = (celsius * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahreneit);
+  celsiusLink.classList.remove("active");
+  fahreneitLink.classList.add("active");
+  let fahreneit = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = `${Math.round(fahreneit)}°`;
+}
+function showCelsius(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#current-temp");
+  celsiusLink.classList.add("active");
+  fahreneitLink.classList.remove("active");
+  temperature.innerHTML = `${Math.round(celsiusTemperature)}°`;
 }
 
-let celsius = null;
+let celsiusTemperature = null;
 
 let searchBar = document.querySelector("#search-bar");
 searchBar.addEventListener("submit", search);
 
-let fahreneit = document.querySelector("#fahr-link");
-fahreneit.addEventListener("click", showFahreneit);
+let fahreneitLink = document.querySelector("#fahr-link");
+fahreneitLink.addEventListener("click", showFahreneit);
+let celsiusLink = document.querySelector("#cels-link");
+celsiusLink.addEventListener("click", showCelsius);
 
 searchCity("Sydney");
