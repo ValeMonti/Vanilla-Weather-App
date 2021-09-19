@@ -53,7 +53,10 @@ function displayTemperature(response) {
   let date = document.querySelector("#current-date");
   let time = document.querySelector("#current-time");
   let icon = document.querySelector("#now-icon");
-  temperature.innerHTML = `${Math.round(response.data.main.temp)}°`;
+
+  celsius = response.data.main.temp;
+
+  temperature.innerHTML = `${Math.round(celsius)}°`;
   city.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = `humidity: ${response.data.main.humidity} %`;
@@ -78,7 +81,19 @@ function search(event) {
   let city = document.querySelector("#search-input").value;
   searchCity(city);
 }
-searchCity("Sydney");
+function showFahreneit(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#current-temp");
+  let fahreneit = (celsius * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahreneit);
+}
+
+let celsius = null;
 
 let searchBar = document.querySelector("#search-bar");
 searchBar.addEventListener("submit", search);
+
+let fahreneit = document.querySelector("#fahr-link");
+fahreneit.addEventListener("click", showFahreneit);
+
+searchCity("Sydney");
