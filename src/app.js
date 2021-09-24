@@ -45,6 +45,31 @@ function formatTime() {
   return `${hour} : ${minute}`;
 }
 
+function displayForecast() {
+  let daysForecast = document.querySelector("#forecast");
+  let forecastHTML = "";
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+   <div class="card" style="width: 11rem">
+            <div class="card-body">
+              <h4 class="card-title">${day}</h4>
+              <img
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                alt=""
+                width="35"
+              />
+              <h4 class="card-title">20&deg;</h4>
+            </div>
+          </div>
+          `;
+  });
+
+  daysForecast.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperature = document.querySelector("#current-temp");
   let city = document.querySelector("#current-city");
@@ -126,3 +151,4 @@ let geoButton = document.querySelector("#local-button");
 geoButton.addEventListener("click", handleGeolocation);
 
 searchCity("Sydney");
+displayForecast();
