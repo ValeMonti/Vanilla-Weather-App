@@ -45,7 +45,8 @@ function formatTime() {
   return `${hour} : ${minute}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let daysForecast = document.querySelector("#forecast");
   let forecastHTML = "";
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -53,21 +54,26 @@ function displayForecast() {
     forecastHTML =
       forecastHTML +
       `
-   <div class="card" style="width: 11rem">
-            <div class="card-body">
-              <h4 class="card-title">${day}</h4>
-              <img
-                src="http://openweathermap.org/img/wn/01d@2x.png"
-                alt=""
-                width="35"
-              />
-              <h4 class="card-title">20&deg;</h4>
-            </div>
-          </div>
-          `;
+      <div class="card" style="width: 11rem">
+      <div class="card-body">
+      <h4 class="card-title">${day}</h4>
+      <img
+      src="http://openweathermap.org/img/wn/01d@2x.png"
+      alt=""
+      width="35"
+      />
+      <h4 class="card-title">20&deg;</h4>
+      </div>
+      </div>
+      `;
   });
 
   daysForecast.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  let apiKey = "d9d50f2f019894bca4e62266dfe12e78";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -94,6 +100,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -151,4 +159,3 @@ let geoButton = document.querySelector("#local-button");
 geoButton.addEventListener("click", handleGeolocation);
 
 searchCity("Sydney");
-displayForecast();
