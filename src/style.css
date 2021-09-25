@@ -35,7 +35,9 @@
 .day {
   background: center/cover url("../media/day.jpg") no-repeat;
 }
-/* .night {background: center/cover url("../media/night.jpg") no-repeat;} */
+.night {
+  background: center/cover url("../media/night.jpg") no-repeat;
+}
 .now-city-time {
   margin: 0px 0px 45px;
 }
